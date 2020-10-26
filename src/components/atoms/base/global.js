@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { respond } from "./mixin";
 export const GlobalStyle = createGlobalStyle`
     *,
@@ -35,6 +35,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Mulish', sans-serif;
         overflow-x: hidden;
     }
+`
 
-    @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+export const MaxWidth = styled.div`
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 14.3rem;
 `
