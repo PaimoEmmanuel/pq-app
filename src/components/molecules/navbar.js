@@ -22,9 +22,9 @@ export const Navbar = () => (
         </LogoWrapper>
         <div>
             <NavLink to="/go">Home</NavLink>
-            <a href="/">Take Quiz</a>
-            <a href="/">Contact</a>
-            <a href="/">Help</a>
+            <NavLink to="/go">Take Quiz</NavLink>
+            <NavLink to="/go">Contat</NavLink>
+            <NavLink to="/go">Help</NavLink>
         </div>
     </Wrapper>
 );
