@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import { Home } from "../pages/home";
+import { Footer } from "../components/molecules/footer";
 
 const AppRouter = () => (
     <Router>
@@ -16,7 +17,7 @@ const AppRouter = () => (
                 {/* <PrivateRoute path="/dashboard" exact={true} component={BlogDashboardPage} /> */}
                 {/* <Route component={NotFoundPage} /> */}
             </Switch>
-            {/*<Footer />*/}
+            <Footer />
         </div>
     </Router>
 );

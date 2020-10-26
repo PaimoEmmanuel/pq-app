@@ -8,6 +8,9 @@ export const getColor = (color) => {
     else if(color === "white") {
         return "#FFFFFF";
     }
+    else if(color === "offWhite") {
+        return "#E5E5E5";
+    }
 }
 
 export const getColorRGB = (color) => {
@@ -19,5 +22,8 @@ export const getColorRGB = (color) => {
     }
     else if(color === "white") {
         return "255,255,255";
+    }
+    else if(color === "offWhite") {
+        return "244,246,251";
     }
 }

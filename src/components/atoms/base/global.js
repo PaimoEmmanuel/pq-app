@@ -38,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const MaxWidth = styled.div`
+    width: 100%;
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
