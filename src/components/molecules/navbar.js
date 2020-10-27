@@ -26,7 +26,7 @@ export const Navbar = () => (
                 </LogoWrapper>
                 <div>
                     <HeaderLink to="/">Home</HeaderLink>
-                    <HeaderLink to="/go">Take Quiz</HeaderLink>
+                    <HeaderLink to="/get-started">Take Quiz</HeaderLink>
                     <HeaderLink to="/go">Contact</HeaderLink>
                     <HeaderLink to="/go">Help</HeaderLink>
                 </div>

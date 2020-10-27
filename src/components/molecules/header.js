@@ -3,9 +3,10 @@ import { HeadLine2, Body1, Button } from "../atoms/typography";
 import { MaxWidth } from "../atoms/base/global";
 import { getColorRGB } from "../../utils/color";
 import { VerticalSpacer } from "../atoms/spacer";
+import HeaderBg from "../../assets/images/header-bg.png";
 
 const Wrapper = styled.div`
-    background-image: url("./header-bg.png");
+    background-image: url(${HeaderBg});
     background-size: cover;
     background-color: rgba(${getColorRGB("defaultBlue")}, 0.06);
     height: 56rem;
@@ -26,7 +27,7 @@ export const Header = () => (
                 <Body1>Here is the smartest online platform that gives you access to past question quizzes that for WASSCE, UTME AND POST UTME </Body1>
                 <VerticalSpacer size="5.6rem"/>
                 <ButtonWrapper>
-                    <Button>Start practice</Button>
+                    <Button to="/get-started">Start practice</Button>
                 </ButtonWrapper>
             </div>
         </MaxWidth>

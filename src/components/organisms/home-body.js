@@ -4,6 +4,9 @@ import { HeadLine3, HeadLine6, Body1, Body2 } from "../atoms/typography";
 import { MaxWidth } from "../atoms/base/global";
 import { VerticalSpacer } from "../atoms/spacer";
 import { getColorRGB } from "../../utils/color";
+import { Builders } from "../molecules/team-image";
+import Paimo from "../../assets/images/paimo.png";
+import Sam from "../../assets/images/sam.png";
 
 const Main = styled.main`
 
@@ -22,18 +25,18 @@ const Section2 = styled.section`
 const Flex = styled.div`
     display: flex;
     justify-content: space-between;
+    & > div {
+        margin-right: 5rem;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
 `;
 
 const FlexChild = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    &, div {
-        margin-right: 5rem;
-    }
-    &:last-child {
-        margin-right: 0;
-    }
 `;
 
 const Team = styled.div`
@@ -160,9 +163,10 @@ export const HomeBody = () => (
 
         <Team>
             <MaxWidth>
+                <UndoRotate>
                 <Flex>
                     <FlexChild>
-                        <Wassce />
+                        <Builders src={Paimo} />
                         <VerticalSpacer size="2.794rem"/>
                         <HeadLine6>Paimo emmanuel</HeadLine6>
                         <VerticalSpacer size="1.2rem"/>
@@ -172,7 +176,7 @@ export const HomeBody = () => (
                     </FlexChild>
 
                     <FlexChild>
-                        <Utme />
+                        <Builders src={Sam} />
                         <VerticalSpacer size="2.794rem"/>
                         <HeadLine6>Olaniran Samuel</HeadLine6>
                         <VerticalSpacer size="1.2rem"/>
@@ -182,7 +186,7 @@ export const HomeBody = () => (
                     </FlexChild>
 
                     <FlexChild>
-                        <Putme />
+                        <Builders src={Paimo} />
                         <VerticalSpacer size="2.794rem"/>
                         <HeadLine6>Paimmas</HeadLine6>
                         <VerticalSpacer size="1.2rem"/>
@@ -191,6 +195,7 @@ export const HomeBody = () => (
                         </Body2>
                     </FlexChild>
                 </Flex>
+                </UndoRotate>
             </MaxWidth>
         </Team>
 

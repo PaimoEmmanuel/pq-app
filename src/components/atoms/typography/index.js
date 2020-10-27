@@ -22,7 +22,7 @@ export const HeadLine2 = styled.h2`
     line-height: 5.6rem;
     letter-spacing: 0.2px;
     text-align: center;
-    color: ${getColor("lightBlack")};
+    color: ${props => props.color ? getColor(props.color) : getColor("lightBlack")};
 `
 
 export const HeadLine3 = styled.h3`
@@ -31,7 +31,7 @@ export const HeadLine3 = styled.h3`
     line-height: 4rem;
     letter-spacing: 0.1px;
     text-align: center;
-    color: ${getColor("lightBlack")};
+    color: ${props => props.color ? getColor(props.color) : getColor("lightBlack")};
 `
 
 export const HeadLine6 = styled.h6`
@@ -40,7 +40,7 @@ export const HeadLine6 = styled.h6`
     line-height: 2.4rem;
     letter-spacing: 0.1px;
     text-align: center;
-    color: ${getColor("lightBlack")};
+    color: ${props => props.color ? getColor(props.color) : getColor("lightBlack")};
 `
 
 export const Body1 = styled.p`
