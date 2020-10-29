@@ -58,7 +58,16 @@ export const Body2 = styled.p`
     line-height: 2rem;
     letter-spacing: 0.2px;
     text-align: center;
-    color: ${getColor("lightBlack")};
+    color: ${props => props.color ? getColor(props.color) : getColor("lightBlack")};
+`
+export const Body3 = styled.p`
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: ${props => props.color ? getColor(props.color) : getColor("lightBlack")};
 `
 
 export const Button = styled(Link)`
@@ -70,5 +79,10 @@ export const Button = styled(Link)`
     text-align: center;
     letter-spacing: 0.3px;
     padding: 1.2rem 1.8rem;
+    display: inline-block;
     color: ${getColor("white")};
 `
+
+export const Important = styled.span`
+    color: red;
+`;

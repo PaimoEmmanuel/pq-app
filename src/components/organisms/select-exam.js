@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HeadLine2, HeadLine6, Body1, Button } from "../atoms/typography";
+import { HeadLine2, HeadLine6, Button } from "../atoms/typography";
 import { getColor } from "../../utils/color";
 import { MaxWidth } from "../atoms/base/global";
 import { VerticalSpacer } from "../atoms/spacer";
@@ -31,14 +31,14 @@ const FlexWrap = styled.div`
 
 const WhiteBg = styled.div`
     background-color: ${getColor("white")};
-    border-radius: 60rem;
+    border-radius: 6rem;
     padding: 2.4rem 10rem;
 `;
 const WhiteBg2 = styled.div`
     background-color: ${getColor("white")};
-    border-radius: 60rem;
+    border-radius: 12.5rem;
     width: 100%;
-    padding: 2.4rem 10rem;
+    padding: 2.4rem 7rem;
 `;
 
 const Flex = styled.div`
@@ -72,7 +72,7 @@ const Option = ({examType, icon}) => (
         <VerticalSpacer size="2.4rem" />
         <HeadLine6>{examType}</HeadLine6>
         <VerticalSpacer size="3.4rem" />
-        <Button to={examType}>Start Practice</Button>
+        <Button to={"select-exam/"+examType}>Start Practice</Button>
     </FlexChild>
 )
 export const ExamType = () => {

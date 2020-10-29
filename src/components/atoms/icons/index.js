@@ -74,3 +74,9 @@ export const Medal = () => (
         <path d="M41.1458 2.604H8.75V4.16646H41.1458V2.604Z" fill="#CACACA" />
     </svg>
 );
+
+export const DropDownArrow = () => (
+    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 2L7 7L12 2" stroke="#A0A0A0" stroke-width="3" />
+    </svg>
+);

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { HeadLine2, Body1, Button} from "../atoms/typography";
-import { getColorRGB } from "../../utils/color";
 import { Input } from "../atoms/input";
 import { VerticalSpacer } from "../atoms/spacer";
 import Background from "../../assets/images/get-started-bg.jpg";
