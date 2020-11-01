@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
 import styled from "styled-components";
 import { Body3 } from "../atoms/typography";
 import {
@@ -39,21 +39,24 @@ const MenuWrapper = styled.div`
 // const ItemButton = styled.button`
 
 // `;
-export const SimpleDropdown = ({items}) => {
+export const SimpleDropdown = ({items, setValue}) => {
     const [hidden, setHidden] = useState(true);
     const [itemSelected, setItemSelected] = useState("");
 
     return (
         <Dropdown>
             <DropdownButton dropdownToggle onClick={() => setHidden(!hidden)}>
-                <Body3>{itemSelected}</Body3>
+                <Body3 onChange={(e) => {setValue(e.target.value)}}>{itemSelected}</Body3>
                 <DropDownArrow />
             </DropdownButton>
             <DropdownMenu hidden={hidden} toggle={() => setHidden(!hidden)}>
                 <MenuWrapper>
-                    {items.map(item => (
-                    <DropdownItem>
-                    <FullWidth onClick={() => {setItemSelected(item); setHidden(true)}}><Body3>{item}</Body3></FullWidth>
+                    {items.map((item, index) => (
+                    <DropdownItem key={index}>
+                    <FullWidth onClick={() => {
+                        setItemSelected(item);
+                        setHidden(true);
+                    }}><Body3>{item}</Body3></FullWidth>
                 </DropdownItem>
                 ))}
                 </MenuWrapper>

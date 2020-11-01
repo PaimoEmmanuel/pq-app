@@ -1,9 +1,15 @@
 import AppRouter from "./routes/AppRouter";
+import UserContextProvider  from "./contexts/UserContext";
+import SubjectContextProvider  from "./contexts/SubjectContext";
 
 function App() {
   return (
     <div>
-      <AppRouter />
+    <UserContextProvider>
+      <SubjectContextProvider>
+        <AppRouter />
+      </SubjectContextProvider>
+    </UserContextProvider>
     </div>
   );
 }

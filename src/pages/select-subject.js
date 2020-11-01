@@ -1,4 +1,5 @@
-// import { useState } from "react"
+import { useContext } from "react"
+import { UserContext } from "../contexts/UserContext";
 import styled from "styled-components";
 import { getColor } from "../utils/color";
 import { subjects, years } from "../utils";
@@ -6,7 +7,7 @@ import { HeadLine2, Body2, Body3, Button } from "../components/atoms/typography"
 import { MaxWidth } from "../components/atoms/base/global";
 import { VerticalSpacer } from "../components/atoms/spacer";
 import Background from "../assets/images/get-started-bg.jpg";
-import { ExamDetails } from "../components/organisms/exam-details";
+import ExamDetails from "../components/organisms/exam-details";
 
 const WhiteBg = styled.div`
     background-color: ${getColor("white")};
@@ -36,7 +37,7 @@ const OffWhiteBg = styled.div`
 
 
 export const SelectSubject = ({ match }) => {
-
+    const { user } = useContext(UserContext);
     return (
         <div>
             <Wrapper></Wrapper>
@@ -46,7 +47,7 @@ export const SelectSubject = ({ match }) => {
                     <HeadLine2>ID: {match.params.id}</HeadLine2>
                 </WhiteBg>
                 <WhiteBg>
-                    <Body2>email</Body2>
+                    <Body2>email {user}</Body2>
                 </WhiteBg>
                 <WhiteBg width="100%">
                     <VerticalSpacer size="6.7rem" />

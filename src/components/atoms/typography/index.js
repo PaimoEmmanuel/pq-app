@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { getColor } from "../../../utils/color";
 import { Link, NavLink } from "react-router-dom";
 
@@ -69,8 +69,15 @@ export const Body3 = styled.p`
     text-align: center;
     color: ${props => props.color ? getColor(props.color) : getColor("lightBlack")};
 `
+export const QuestionText = styled.p`
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    letter-spacing: 0.1px;
+    color: ${getColor("lightBlack")};
+`;
 
-export const Button = styled(Link)`
+export const ButtonStyle = css`
     background-color: ${getColor("defaultBlue")};
     text-decoration: none;
     font-weight: bold;
@@ -81,8 +88,20 @@ export const Button = styled(Link)`
     padding: 1.2rem 1.8rem;
     display: inline-block;
     color: ${getColor("white")};
-`
+`;
+export const Button = styled(Link)`
+    ${ButtonStyle};
+`;
+export const BButton = styled.button`
+    ${ButtonStyle};
+    display: block;
+    margin: 0 auto;
+    border: none;
 
+    &:focus {
+        outline: none;
+    }
+`;
 export const Important = styled.span`
     color: red;
 `;
