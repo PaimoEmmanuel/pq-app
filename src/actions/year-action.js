@@ -1,4 +1,4 @@
 export const yearAction = (subject) => ({
-    type: "UPDATE_SUBJECT",
+    type: "UPDATE_YEAR",
     subject
 })

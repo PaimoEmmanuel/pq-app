@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import styled from "styled-components";
 import { Body3 } from "../atoms/typography";
 import {
@@ -46,7 +46,7 @@ export const SimpleDropdown = ({items, setValue}) => {
     return (
         <Dropdown>
             <DropdownButton dropdownToggle onClick={() => setHidden(!hidden)}>
-                <Body3 onChange={(e) => {setValue(e.target.value)}}>{itemSelected}</Body3>
+                <Body3 onChange={(e) => {setValue(e.target.value); console.log(e.target.value);}}>{itemSelected}</Body3>
                 <DropDownArrow />
             </DropdownButton>
             <DropdownMenu hidden={hidden} toggle={() => setHidden(!hidden)}>
@@ -55,6 +55,7 @@ export const SimpleDropdown = ({items, setValue}) => {
                     <DropdownItem key={index}>
                     <FullWidth onClick={() => {
                         setItemSelected(item);
+                        setValue(item);
                         setHidden(true);
                     }}><Body3>{item}</Body3></FullWidth>
                 </DropdownItem>

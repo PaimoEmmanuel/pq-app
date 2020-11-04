@@ -4,9 +4,9 @@ import { yearReducer } from '../reducers/year-reducer';
 export const YearContext = createContext();
 
 const YearContextProvider = (props) => {
-    const [subject, dispatch] = useReducer(yearReducer, "")
+    const [year, dispatch] = useReducer(yearReducer, "")
     return (
-        <YearContext.Provider value={{subject, dispatch}}>
+        <YearContext.Provider value={{year, dispatch}}>
             {props.children}
         </YearContext.Provider>
     )

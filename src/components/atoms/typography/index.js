@@ -72,7 +72,7 @@ export const Body3 = styled.p`
 export const QuestionText = styled.p`
     font-size: 2.4rem;
     font-weight: 700;
-    line-height: 2.4rem;
+    line-height: 3rem;
     letter-spacing: 0.1px;
     color: ${getColor("lightBlack")};
 `;

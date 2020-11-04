@@ -1,23 +1,53 @@
 import styled from "styled-components";
-import { HorizontalSpacer } from "../atoms/spacer";
-import { QuestionText } from "../atoms/typography";
+import { HorizontalSpacer, VerticalSpacer } from "../atoms/spacer";
+import { QuestionText, Body1 } from "../atoms/typography";
 const Wrapper = styled.div`
 
 `;
-export const Question = ({number, question, options}) => {
+const OptionWrapper = styled.div`
+    margin-bottom: 1.9rem;
+    margin-left: 5rem;
+`;
+const QuestionImg = styled.img`
+    width: 15rem;
+    height: auto;
+`;
+const QuestionWrapper = styled.div`
+    display: flex
+`;
+export const Question = ({ number, question, section, options, image }) => {
     return (
         <Wrapper>
-        <QuestionText><span>Q{number}</span><HorizontalSpacer /> {question}</QuestionText>
-        <form>
-            {options.map(option => (
-                <div>
+            {section && <Body1>{section}</Body1>}
+            {section && <VerticalSpacer size="2rem" />}
+            {image && <QuestionImg src={image} />}
+            {image && <VerticalSpacer size="2rem" />}
+            <QuestionWrapper>
+            <QuestionText>Q{number}</QuestionText>
+            <HorizontalSpacer size="2.8rem"/> 
+            <QuestionText>{question}</QuestionText>
+            </QuestionWrapper>
+            <VerticalSpacer size="4rem" />
+            <form>
+                {
+                    Object.entries(options).map(x => x[x.length - 1]).map(option => (
+                        <OptionWrapper>
+                            <QuestionText>
+                                <input type="radio" id={option} name="option" value={option} />
+                                <label for={option}>{option}</label>
+                            </QuestionText>
+                        </OptionWrapper>
+                    ))
+                }
+                {/* {options.map(option => (
+                <OptionWrapper>
                     <QuestionText>
                     <input type="radio" id={option} name="option" value={option} />
                     <label for={option}>{option}</label>
                     </QuestionText>
-                </div>
-            ))}
-        </form>
+                </OptionWrapper>
+            ))} */}
+            </form>
         </Wrapper>
     )
 }

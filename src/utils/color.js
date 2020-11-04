@@ -19,7 +19,16 @@ export const getColor = (color) => {
     }
     else if(color === "lightGray2") {
         return "#C4C4C4";
+    }//
+    // else if(color === "done") {
+    //     return "#27A2DB";
+    // }39, 162, 219
+    else if(color === "green") {
+        return "#1EAD1E";
     }
+    // else if(color === "lightGray2") {
+    //     return "#C4C4C4";
+    // }
 }
 
 export const getColorRGB = (color) => {
@@ -43,5 +52,11 @@ export const getColorRGB = (color) => {
     }
     else if(color === "lightGray2") {
         return "196,196,196";
+    }
+    else if(color === "done") {
+        return "39, 162, 219";
+    }
+    else if(color === "green") {
+        return "30,173,30";
     }
 }

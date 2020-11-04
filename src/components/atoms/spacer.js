@@ -5,5 +5,6 @@ export const VerticalSpacer = styled.div`
 `
 
 export const HorizontalSpacer = styled.div`
-    width: ${props => props.size }
+    display: inline;
+    width: ${props => props.size };
 `

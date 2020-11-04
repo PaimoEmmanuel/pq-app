@@ -10,12 +10,10 @@ import { QuestionsPage } from "../pages/questions";
 import { SelectSubject } from "../pages/select-subject";
 import { Navbar } from "../components/molecules/navbar";
 import { Footer } from "../components/molecules/footer";
-import UserContextProvider  from "../contexts/UserContext";
 
 
 const AppRouter = () => (
     <Router>
-        <UserContextProvider>
             <Navbar />
             <Switch>
                 <Route path="/" component={Home} exact={true} />
@@ -27,7 +25,6 @@ const AppRouter = () => (
                 {/* <Route component={NotFoundPage} /> */}
             </Switch>
             <Footer />
-        </UserContextProvider>
     </Router>
 );
 
