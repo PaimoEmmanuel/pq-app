@@ -3,6 +3,8 @@ import UserContextProvider from "./contexts/UserContext";
 import SubjectContextProvider from "./contexts/SubjectContext";
 import ExamTypeContextProvider from "./contexts/examTypeContext";
 import YearContextProvider from "./contexts/YearContext";
+import QuestionsContextProvider from "./contexts/QuestionsContext";
+
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
         <ExamTypeContextProvider>
           <YearContextProvider>
             <SubjectContextProvider>
-              <AppRouter />
+              <QuestionsContextProvider>
+                <AppRouter />
+              </QuestionsContextProvider>
             </SubjectContextProvider>
           </YearContextProvider>
         </ExamTypeContextProvider>

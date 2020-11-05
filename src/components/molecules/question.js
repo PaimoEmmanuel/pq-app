@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { HorizontalSpacer, VerticalSpacer } from "../atoms/spacer";
 import { QuestionText, Body1 } from "../atoms/typography";
@@ -15,7 +16,9 @@ const QuestionImg = styled.img`
 const QuestionWrapper = styled.div`
     display: flex
 `;
-export const Question = ({ number, question, section, options, image }) => {
+export const Question = ({ number, question, section, options, image, setCheckState }) => {
+    const [ optionState, setOptionState ] = useState(false);
+    setCheckState(optionState)
     return (
         <Wrapper>
             {section && <Body1>{section}</Body1>}
@@ -33,7 +36,7 @@ export const Question = ({ number, question, section, options, image }) => {
                     Object.entries(options).map(x => x[x.length - 1]).map(option => (
                         <OptionWrapper>
                             <QuestionText>
-                                <input type="radio" id={option} name="option" value={option} />
+                                <input type="radio" id={option} name="option" value={option} onChange={(e)=> {setOptionState(e.target.checked)}} />
                                 <label for={option}>{option}</label>
                             </QuestionText>
                         </OptionWrapper>
