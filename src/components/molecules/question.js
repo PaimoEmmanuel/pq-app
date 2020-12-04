@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import { HorizontalSpacer, VerticalSpacer } from "../atoms/spacer";
 import { QuestionText, Body1 } from "../atoms/typography";
+import { QuestionsContext } from "../../contexts/QuestionsContext";
+import { setSelectedOption, setRadioState, setUserAnswer } from "../../actions/question-action";
+
 const Wrapper = styled.div`
 
 `;
@@ -16,9 +19,8 @@ const QuestionImg = styled.img`
 const QuestionWrapper = styled.div`
     display: flex
 `;
-export const Question = ({ number, question, section, options, image, setCheckState }) => {
-    const [ optionState, setOptionState ] = useState(false);
-    setCheckState(optionState)
+export const Question = ({ number, question, section, options, image, checked, radioState }) => {
+    const { dispatch } = useContext(QuestionsContext);
     return (
         <Wrapper>
             {section && <Body1>{section}</Body1>}
@@ -33,23 +35,20 @@ export const Question = ({ number, question, section, options, image, setCheckSt
             <VerticalSpacer size="4rem" />
             <form>
                 {
-                    Object.entries(options).map(x => x[x.length - 1]).map(option => (
-                        <OptionWrapper>
+                    Object.entries(options).map(x => x[x.length - 1]).map((option, index) => (
+                        <OptionWrapper key={index}>
                             <QuestionText>
-                                <input type="radio" id={option} name="option" value={option} onChange={(e)=> {setOptionState(e.target.checked)}} />
-                                <label for={option}>{option}</label>
+                                <input type="radio" id={option} name="option" checked={radioState[index]} value={option}
+                                onChange={(e)=> {
+                                    dispatch(setRadioState(index, number, true));
+                                    dispatch(setSelectedOption(number, e.target.checked));
+                                    dispatch(setUserAnswer(number, index ));
+                                }} />
+                                <label htmlFor={option}>{option}</label>
                             </QuestionText>
                         </OptionWrapper>
                     ))
                 }
-                {/* {options.map(option => (
-                <OptionWrapper>
-                    <QuestionText>
-                    <input type="radio" id={option} name="option" value={option} />
-                    <label for={option}>{option}</label>
-                    </QuestionText>
-                </OptionWrapper>
-            ))} */}
             </form>
         </Wrapper>
     )

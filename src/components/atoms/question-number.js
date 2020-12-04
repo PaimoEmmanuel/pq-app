@@ -12,7 +12,7 @@ export const QuestionNumber = styled.p`
     text-align: center;
     border-radius: 50%;
     border: 2px solid ${getColor("defaultBlue")};
-    background: ${props => props.status ? `rgba(${getColorRGB(props.status)}, 0.45)` : `none`};
+    background: ${props => props.status === true ? `rgba(${getColorRGB("done")}, 0.45)` : `none`};
     height: 4rem;
     width: 4rem;
 `;

@@ -20,9 +20,9 @@ export const getColor = (color) => {
     else if(color === "lightGray2") {
         return "#C4C4C4";
     }//
-    // else if(color === "done") {
-    //     return "#27A2DB";
-    // }39, 162, 219
+    else if(color === "lightGray3") {
+        return "#E1E6E9";
+    }
     else if(color === "green") {
         return "#1EAD1E";
     }

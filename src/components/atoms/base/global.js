@@ -42,5 +42,5 @@ export const MaxWidth = styled.div`
     max-width: 1440px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 14.3rem;
+    padding: 0 6.3rem;
 `

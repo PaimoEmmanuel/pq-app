@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import { getColor } from "../../../utils/color";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export const HeaderLink = styled(NavLink)`
+export const HeaderLink = styled.a`
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.8rem;

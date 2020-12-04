@@ -44,7 +44,6 @@ export const UserForm = (props) => {
                         } else {
                             setError("");
                             dispatch(userAction(userInput));
-                            console.log(userInput);
                             props.history.push('/select-exam');
                         }
                     }}>

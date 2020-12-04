@@ -30,10 +30,10 @@ export const Navbar = () => {
                         <p>{questions.length}</p>
                     </LogoWrapper>
                     <div>
-                        <HeaderLink to="/">Home</HeaderLink>
-                        <HeaderLink to="/get-started">Take Quiz</HeaderLink>
-                        <HeaderLink to="/go">Contact</HeaderLink>
-                        <HeaderLink to="/go">Help</HeaderLink>
+                        <HeaderLink href="/">Home</HeaderLink>
+                        <HeaderLink href="/get-started">Take Quiz</HeaderLink>
+                        <HeaderLink href="/go">Contact</HeaderLink>
+                        <HeaderLink href="/go">Help</HeaderLink>
                     </div>
                 </InnerWrapper>
                

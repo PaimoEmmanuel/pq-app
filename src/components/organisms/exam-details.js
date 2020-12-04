@@ -17,9 +17,11 @@ const DropdownWrapper = styled.div`
     margin: 0 auto;
 `;
 const TextAlign = styled.div`
-    text-align: left;
+    & p {
+        text-align: left;
+    }
 `;
-const GetQuestions = styled.button`
+const GetQuestions = styled.div`
     border: none;
     button {
         width: 100%;
@@ -37,15 +39,15 @@ export const ExamDetails = ({ examType, optionOne, optionTwo, history, location 
     return (
         <DropdownWrapper>
             {error && <Body2><Important>{error}</Important></Body2>}
-            <Body2>
-                <TextAlign>{examType === "Post-UTME" ? "Name of Instituition" : "Select Subject"} <Important>*</Important></TextAlign>
-            </Body2>
+            <TextAlign>
+                <Body2>{examType === "Post-UTME" ? "Name of Instituition" : "Select Subject"} <Important>*</Important></Body2>
+            </TextAlign>
             <VerticalSpacer size="1.6rem" />
             <SimpleDropdown items={optionOne} setValue={setSubjectSelected} />
             <VerticalSpacer size="7.3rem" />
-            <Body2>
-                <TextAlign>{examType === "Post-UTME" ? "Course of Study" : "Select Year"} <Important>*</Important></TextAlign>
-            </Body2>
+            <TextAlign>
+                <Body2>{examType === "Post-UTME" ? "Course of Study" : "Select Year"} <Important>*</Important></Body2>
+            </TextAlign>
             <VerticalSpacer size="1.6rem" />
             <SimpleDropdown items={optionTwo} setValue={setYear} />
             <VerticalSpacer size="5.4rem" />

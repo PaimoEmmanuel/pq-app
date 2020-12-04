@@ -6,13 +6,15 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-gap: 1.5rem 0.8rem;
+    position: sticky;
+    top: 10rem;
 `;
 export const QuestionNumbers = ({ questionNo }) => {
     return (
         <Wrapper>
             {questionNo.map((question) => {
                 return (
-                    <QuestionNumber status={question.status}>
+                    <QuestionNumber key={question.number} status={question.selected}>
                         {question.number}
                     </QuestionNumber>
                 )
