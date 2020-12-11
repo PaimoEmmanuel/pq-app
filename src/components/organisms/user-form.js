@@ -30,7 +30,7 @@ export const UserForm = (props) => {
     return (
         <Wrapper>
             <HeadLine2 color="white">Take Quiz</HeadLine2>
-            <Body1 color="white">Enter your email address to serve as your userInputname</Body1>
+            <Body1 color="white">Enter your email address to serve as your username</Body1>
             <VerticalSpacer size="1.1rem" />
             {error && <Body1><Important>{error}</Important></Body1>}
             <form>

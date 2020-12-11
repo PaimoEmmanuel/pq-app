@@ -1,5 +1,6 @@
 import {
    Router,
+   withRouter,
   Switch,
   Route,
 } from "react-router-dom";

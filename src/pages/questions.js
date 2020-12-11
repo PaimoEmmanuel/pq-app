@@ -12,7 +12,8 @@ import { QuestionNumbers } from "../components/organisms/question-numbers";
 import { updateQuestions } from "../actions/question-action";
 import { createBrowserHistory } from 'history';
 import { Link as RLink, withRouter } from "react-router-dom";
-// import { BarLoader } from "react-spinners";
+import { BarLoader } from "react-spinners";
+import { getColor } from "../utils/color";
 let history = createBrowserHistory();
 
 const ButtonWrrapper = styled.div`
@@ -39,6 +40,15 @@ const Flex = styled.div`
 const QWrapper = styled.div`
     width: 65%;
 `;
+const LoaderWrapper = styled.div`
+    height: 80vh;
+    & div {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+`;
+
 export const QuestionsPage = () => {
     const { examType } = useContext(ExamTypeContext);
     const { subject } = useContext(SubjectContext);
@@ -89,8 +99,9 @@ export const QuestionsPage = () => {
     
     if (!isLoaded) {
         return (
-            // <BarLoader loading={!isLoaded}/>
-            <div>loading</div>
+            <LoaderWrapper>
+            <BarLoader loading={!isLoaded} color={getColor("defaultBlue")}/>
+            </LoaderWrapper>
         )
     }
     let display = questions.slice(noOfQuestions - 5, noOfQuestions)
